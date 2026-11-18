@@ -607,7 +607,8 @@ export const POST_BASELINE_TABLE_DDL: readonly string[] = [...RESOURCE_CHANGE_OU
   ...documentFileDdl("storyboards"),
   ...documentFileDdl("scripts"),
   ...documentFileDdl("applications"),
-  ...documentFileDdl("js_scripts")
+  ...documentFileDdl("js_scripts"),
+  ...documentFileDdl("image_documents")
 ];
 
 export const migrations: MigrationDef[] = [
@@ -5071,7 +5072,10 @@ export const migrations: MigrationDef[] = [
   documentFileMigration("20261129_000002", "applications"),
 
   // A JS script is a JSON file in its project's folder.
-  documentFileMigration("20261129_000003", "js_scripts")
+  documentFileMigration("20261129_000003", "js_scripts"),
+
+  // A sketch is a JSON file plus a folder of layer images in its project's folder.
+  documentFileMigration("20261129_000004", "image_documents")
 ];
 
 /**
